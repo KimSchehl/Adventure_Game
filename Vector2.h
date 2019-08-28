@@ -2,8 +2,8 @@
 
 struct Vector2
 {
-	int X = 15;
-	int Y = 15;
+	int X = 25;
+	int Y = 25;
 
 	Vector2()
 	{}

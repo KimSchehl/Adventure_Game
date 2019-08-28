@@ -2,6 +2,7 @@
 #include<iostream>
 #include "ScreenTools.h"
 #include "Player.h"
+#include "Input.h"
 using namespace std;
 
 
@@ -18,37 +19,58 @@ public:
 	};
 
 	static void Fight(Player& player)
-	{
+	{	
+		CConsoleLogger another_console;
+		another_console.Create("This is the first console");
+		another_console.printf("WOW !!! COOLL !!! another console ???");
+		ScreenTools::ClearScreen();
+		cout << "Besiege deinen Gegner in [1]Schere, [2]Stein, [3]Papier" << endl;
+
 		bool kampfBeendet = false;
 		while (!kampfBeendet)
 		{
-			ScreenTools::ClearScreen();
-			int Auswahl;
-
-			cout << "Besiege deinen Gegner in [1]Schere, [2]Stein, [3]Papier" << endl;
-			cin >> Auswahl;
-			Hand hand = GetHand(Auswahl);
+			Hand hand = PlayerHand();
 			if (hand == Nix)
-				continue;
+				continue; // Auf Spieler Input warten
+
+			cout << "\n";
 
 			Hand cpuHand = CpuHand();
+			cout << GetHandName(hand) << " vs " << GetHandName(cpuHand) << endl;
+
+			Sleep(500);
 
 			if (GewinntGegen(hand, cpuHand)) {
-				cout << "Du hast gewonnen" << endl;
+				cout << "  Du hast gewonnen" << endl;
 				Sleep(500);
+				break;
 			}
 			else if (GewinntGegen(cpuHand, hand)) {
-				cout << "Du hast verloren" << endl;
+				cout << "  Du hast verloren" << endl;
 				player.Live -= 10;
-				Sleep(500);
+				Sleep(1500);
+				break;
 			}
 			else{
-				cout << "Unentschieden" << endl;
+				cout << "  Unentschieden" << endl;
 				Sleep(500);
 			}
 
 			Sleep(200);
 		}
+	}
+
+	static Hand PlayerHand() {
+		if (Input::IsKeyPressed('1'))
+			return Schere;
+		
+		if (Input::IsKeyPressed('2'))
+			return Stein;
+		
+		if (Input::IsKeyPressed('3'))
+			return Papier;
+		
+		return Nix;
 	}
 
 	static Hand GetHand(int auswahl){
@@ -79,5 +101,13 @@ public:
 		return false;
 	}
 
-
+	static std::string GetHandName(Hand hand) {
+		switch (hand) {
+		case Brunnen: return "Brunnen";
+		case Stein: return "Stein";
+		case Schere: return "Schere";
+		case Papier: return "Papier";
+		case Nix: return "Nix";
+		}
+	}
 };

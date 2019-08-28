@@ -15,7 +15,7 @@ using namespace std;
 
 
 //Globale Variabeln
-Combat StartKampfSystem;
+			//Combat StartKampfSystem;
 
 
 

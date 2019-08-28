@@ -32,7 +32,7 @@ public:
 
 	void gameLoop() {
 		Map gameMap;
-		Player player1("p1", 100, Vector2(0, 0));
+		Player player1("p1", 100, Vector2(25, 25));
 		Renderer renderer;
 
 		for (;;)
@@ -51,7 +51,7 @@ public:
 				{
 					if (warZone->Inside(player1.Pos)) {
 						cout << "TEST";
-						if ((rand() % 100 + 1) < 5) {
+						if (rand() % 100 < 1) {
 							Combat::Fight(player1);
 						}
 					}
