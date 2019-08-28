@@ -152,12 +152,33 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Adventure_Game.cpp" />
-    <ClCompile Include="Kampfsystem.cpp" />
+    <ClCompile Include="ConsoleSize.cpp" />
+    <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="Combat.cpp" />
+    <ClCompile Include="MainScreen.cpp" />
+    <ClCompile Include="Movement.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="ScreenTools.cpp" />
     <ClCompile Include="Zone.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Kampfsystem.h" />
+    <ClInclude Include="ConsoleSize.h" />
+    <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Combat.h" />
+    <ClInclude Include="MainScreen.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Movement.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ScreenTools.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="Zone.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Adventure_Game.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

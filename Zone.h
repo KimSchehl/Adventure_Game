@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Vector2.h"
 using namespace std;
 
 class Zone
@@ -18,6 +19,10 @@ public:
 
 	virtual void Paint() = 0;
 
+	bool Inside(Vector2 pos) {
+		return Inside(pos.X, pos.Y);
+	}
+
 	bool Inside(int x, int y){	
 		if (
 			(x >= _ZoneX) && (x <= _ZoneX + _ZoneWidth) &&
@@ -33,6 +38,23 @@ public:
 	}
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
