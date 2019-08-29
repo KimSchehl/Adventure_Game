@@ -23,11 +23,9 @@ public:
 
 	static void Fight(Player& player)
 	{	
-		//CConsoleLogger another_console;
-		//another_console.Create("This is the first console");
-		//another_console.printf("WOW !!! COOLL !!! another console ???");
-
+		ScreenTools::SetWindowSize(800, 300);
 		ScreenTools::ClearScreen();
+
 		cout << "Besiege deinen Gegner in [1]Schere, [2]Stein, [3]Papier, [4]Echse, [5]Spock." << endl;
 
 		bool kampfBeendet = false;
@@ -46,18 +44,18 @@ public:
 
 			if (GewinntGegen(hand, cpuHand)) {
 				cout << "  Du hast gewonnen" << endl;
-				Sleep(500);
+				Sleep(2500);
 				break;
 			}
 			else if (GewinntGegen(cpuHand, hand)) {
 				cout << "  Du hast verloren" << endl;
 				player.Live -= 10;
-				Sleep(1500);
+				Sleep(2500);
 				break;
 			}
 			else{
 				cout << "  Unentschieden" << endl;
-				cout << "Kaempft erneut!" << endl;
+				cout << "\n\n" "Kaempft erneut!" << endl;
 			}
 
 			Sleep(200);
@@ -65,6 +63,9 @@ public:
 	}
 
 	static Hand PlayerHand() {
+		if (Input::IsKeyPressed('0'))
+			return Brunnen;
+
 		if (Input::IsKeyPressed('1'))
 			return Schere;
 		
