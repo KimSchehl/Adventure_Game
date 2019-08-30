@@ -11,8 +11,9 @@ class Combat
 {
 
 public:
-	enum Hand{
-		Brunnen,
+	enum Hand {
+		Win,
+		Lose,
 		Schere,
 		Stein,
 		Papier,
@@ -61,11 +62,17 @@ public:
 			Sleep(200);
 		}
 	}
-
+/*Das ist Bullshit
+#define ASCII_1			49	// ASCII wert für Taste 1
+#define ASCII_2			50	// ASCII wert für Taste 2
+#define ASCII_3			51	// ASCII wert für Taste 3
+#define ASCII_4			52	// ASCII wert für Taste 4
+#define ASCII_5			53	// ASCII wert für Taste 5
+#define ASCII_w			119	// ASCII wert für Taste w
+#define ASCII_l			108 // ASCII wert für Taste l
+*/
 	static Hand PlayerHand() {
-		if (Input::IsKeyPressed('0'))
-			return Brunnen;
-
+	
 		if (Input::IsKeyPressed('1'))
 			return Schere;
 		
@@ -80,18 +87,26 @@ public:
 
 		if (Input::IsKeyPressed('5'))
 			return Spock;
+//Testkeys
+		if (Input::IsKeyPressed('W'))
+			return Win;
+
+		if (Input::IsKeyPressed('L'))
+			return Lose;
+
 
 		return Nix;
 	}
 
 	static Hand GetHand(int auswahl){
 		switch (auswahl){
-		case 0: return Brunnen;
+		case 0: return Win;
 		case 1: return Schere;
 		case 2: return Stein;
 		case 3: return Papier;
 		case 4: return Echse;
 		case 5: return Spock;
+		case 6: return Lose;
 		}
 		return Nix;
 	}
@@ -108,29 +123,44 @@ public:
 
 	static bool GewinntGegen(Hand h1, Hand h2){
 		if (h1 == Schere && h2 == Papier) return true;
+		if (h1 == Schere && h2 == Echse) return true;
 		if (h1 == Stein && h2 == Schere) return true;
 		if (h1 == Papier && h2 == Stein) return true;
-			if (h1 == Brunnen && h2 == Stein) return true;
-			if (h1 == Brunnen && h2 == Schere) return true;
-			if (h1 == Papier && h2 == Brunnen) return true;
+			
 		if (h1 == Echse && h2 == Spock) return true;
 		if (h1 == Echse && h2 == Papier) return true;
 		if (h1 == Stein && h2 == Echse) return true;
 		if (h1 == Spock && h2 == Schere) return true;
 		if (h1 == Spock && h2 == Stein) return true;
 		if (h1 == Papier && h2 == Spock) return true;
+		
+		
+		//Test commands
+		
+		if (h1 == Win && h2 == Schere) return true;
+		if (h1 == Win && h2 == Stein) return true;
+		if (h1 == Win && h2 == Papier) return true;
+		if (h1 == Win && h2 == Echse) return true;
+		if (h1 == Win && h2 == Spock) return true;
+
+		if (h1 == Schere && h2 == Lose) return true;
+		if (h1 == Stein && h2 == Lose) return true;
+		if (h1 == Papier && h2 == Lose) return true;
+		if (h1 == Echse && h2 == Lose) return true;
+		if (h1 == Spock && h2 == Lose) return true;
 
 		return false;
 	}
 
 	static std::string GetHandName(Hand hand) {
 		switch (hand) {
-			case Brunnen: return "Brunnen";
+			case Win: return "Winner winner chicken dinner";
 			case Schere: return "Schere";
 			case Stein: return "Stein";
 			case Papier: return "Papier";
 			case Echse: return "Echse";
 			case Spock: return "Spock";
+			case Lose: return "R.I.P";
 			default:
 			case Nix: return "Nix";
 		}

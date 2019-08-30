@@ -50,8 +50,7 @@ public:
 				if (warZone != nullptr)
 				{
 					if (warZone->Inside(player1.Pos)) {
-						cout << "TEST";
-						if (rand() % 100 < 3) {
+							if (rand() % 100 < 3) {
 							Combat::Fight(player1);
 							ScreenTools::SetWindowSize(350, 600);
 						}
