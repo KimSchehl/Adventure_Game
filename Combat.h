@@ -1,5 +1,7 @@
 #pragma once
+
 #include<iostream>
+
 #include "ntverp.h"
 #include "ScreenTools.h"
 #include "Player.h"

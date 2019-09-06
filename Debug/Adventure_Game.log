@@ -1,13 +1,7 @@
 ﻿  Adventure_Game.cpp
-  ConsoleSize.cpp
-  GameEngine.cpp
   Combat.cpp
-  MainScreen.cpp
+  GameEngine.cpp
   Movement.cpp
-  Player.cpp
-  Renderer.cpp
-  ScreenTools.cpp
-  Zone.cpp
   Code wird generiert...
-  C:\Users\Developer\Documents\GitHub\Adventure_Game\Player.cpp : fatal error C1090: Fehler beim PDB-API-Aufruf, Fehlercode "3": C:\Users\Developer\Documents\GitHub\Adventure_Game\Debug\vc142.pdb
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(429,5): error MSB6006: "CL.exe" wurde mit dem Code 1 beendet.
+C:\Users\KimS\Desktop\Adventure Game\Adventure_Game\Combat.h(124): warning C4715:  "Combat::CpuHand": Nicht alle Codepfade geben einen Wert zurück.
+  Adventure_Game.vcxproj -> C:\Users\KimS\Desktop\Adventure Game\Adventure_Game\Debug\Adventure_Game.exe

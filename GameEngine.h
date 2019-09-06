@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 #include <Windows.h>
@@ -6,12 +7,14 @@
 #include <cstdlib>
 #include <conio.h>
 #include <vector>
+
 #include "MainScreen.h"
 #include "Renderer.h"
 #include "Movement.h"
 #include "Zone.h"
 #include "Player.h"
 #include "Combat.h"
+
 using namespace std;
 
 class GameEngine
@@ -26,7 +29,7 @@ public:
 		:_gameMode(gameMode),
 		_name(name) {}
 
-	//andere, kürzere schreibweise
+		//andere, kürzere schreibweise
 		//_gameMode = gameMode;
 		//_name = name;
 

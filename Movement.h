@@ -7,9 +7,11 @@
 #include <cstdlib>
 #include <conio.h>
 #include <vector>
+
 #include "Player.h"
 #include "Map.h"
 #include "Input.h"
+
 using namespace std;
 
 
@@ -39,13 +41,11 @@ public:
 		
 		if (Input::IsKeyPressed('P')) {  //Spiel Pausieren
 	
-			//break; TODO
+			//TODO
 		}
 
 
 	}
-
-
 
 
 };
