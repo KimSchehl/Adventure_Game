@@ -38,11 +38,6 @@ public:
 	
 			player.Pos.X += 1;
 		}
-		
-		if (Input::IsKeyPressed('P')) {  //Spiel Pausieren
-	
-			//TODO
-		}
 
 
 	}
