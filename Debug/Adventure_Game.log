@@ -1,7 +1,13 @@
 ﻿  Adventure_Game.cpp
-  Combat.cpp
   GameEngine.cpp
+  Combat.cpp
+  MainScreen.cpp
   Movement.cpp
+  Player.cpp
+  Renderer.cpp
+  Screen.cpp
+  ScreenTools.cpp
+  Zone.cpp
   Code wird generiert...
-C:\Users\KimS\Desktop\Adventure Game\Adventure_Game\Combat.h(124): warning C4715:  "Combat::CpuHand": Nicht alle Codepfade geben einen Wert zurück.
-  Adventure_Game.vcxproj -> C:\Users\KimS\Desktop\Adventure Game\Adventure_Game\Debug\Adventure_Game.exe
+C:\Program Files\Git_Projekte\Adventure_Game\Combat.h(124): warning C4715: "Combat::CpuHand": Nicht alle Codepfade geben einen Wert zurück.
+  Adventure_Game.vcxproj -> C:\Program Files\Git_Projekte\Adventure_Game\Debug\Adventure_Game.exe
